@@ -1,2 +1,4 @@
 *.slo
 *.json
+*.ptc
+*.cpm

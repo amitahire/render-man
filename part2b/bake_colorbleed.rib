@@ -1,0 +1,240 @@
+Display "colorbleed.tiff" "framebuffer" "rgb"
+Format 640 480  1
+Projection "perspective" "fov" 50
+# ShadingRate 1
+# PixelSamples 4 4
+
+DisplayChannel "float _area"
+DisplayChannel "color _radiosity"
+DisplayChannel "color Cs"
+FrameBegin
+	Imager "background" "color color" [1 1 1]
+	Scale 1.33 1 -1
+	WorldBegin
+
+		# Attribute "cull" "hidden" 0   # to ensure occl. is comp. behind objects
+		# Attribute "cull" "backfacing" 0 # to ensure occl. is comp. on backsides
+		# Attribute "dice" "rasterorient" 0   # view-independent dicing
+
+		# LightSource "shadowlight" 1 "intensity" 20000 "lightcolor" [1 1 1] "from" [0 50 -170]
+		# LightSource "shadowlight" 2 "intensity" 20000 "lightcolor" [1 1 1] "from" [-10 10 -140]
+
+		Attribute "visibility" "int diffuse" [1]
+		Attribute "visibility" "int specular" [1]
+		Attribute "visibility" "int transmission" [1]
+		Attribute "trace" "bias" [.01]
+
+		# # Surface "bake_radiosity" "string bakefile" "colorbleed.ptc"
+		# 		"string displaychannels" "_area,_radiosity,Cs" "float Kd" 0.8
+		Surface "pointbasedcolorbleeding" "string filename" "colorbleed.ptc"
+				"float clampbleeding" 1 "float sortbleeding" 1 "float maxsolidangle" 0.03
+				"float maxvariation" 0.02 "string sides" "both" "float maxvariation" 0.01 "float intensity" 4.0
+
+		Color [2 2 2]
+		AttributeBegin
+			Translate -50 -50 -200
+			AttributeBegin
+				# Surface "matte"
+				Scale 100 100 100
+				Color [0.2 0.2 0.2]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate 0 0 100
+				Rotate 90 0 1 0
+				Scale 100 101 100
+				Color [0.1 0 0]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate -1 0 100
+				Rotate 90 0 1 0
+				Scale 100 101 100
+				Color [0.1 0 0]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate 100 0 0
+				Rotate -90 0 1 0
+				Scale 100 101 100
+				Color [0.1 0 0]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate 101 0 0
+				Rotate -90 0 1 0
+				Scale 100 101 100
+				Color [0.1 0 0]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "specular"
+				Translate 0 100 0
+				Rotate 90 1 0 0
+				Scale 101 100 100
+				Color [0 0.2 0.2]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate 0 101 0
+				Rotate 90 1 0 0
+				Scale 101 100 100
+				Color [0 0.2 0.2]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "specular"
+				Translate 0 0 100
+				Rotate -90 1 0 0
+				Scale 101 100 100
+				Color [0 0.2 0.2]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+
+			AttributeBegin
+				# Surface "matte"
+				Translate 0 -1 100
+				Rotate -90 1 0 0
+				Scale 101 100 100
+				Color [0 0.2 0.2]
+				Polygon "P" [0 0 0  1 0 0  0 1 0]
+				Polygon "P" [1 1 0  0 1 0  1 0 0]
+			AttributeEnd
+			# AttributeBegin
+			# 	Translate -50 -50 202
+			# 	# Surface "matte"
+			# 	Scale 200 200 200
+			# 	Color [5 5 5]
+			# 	Polygon "P" [0 0 0  1 0 0  0 1 0]
+			# 	Polygon "P" [1 1 0  0 1 0  1 0 0]
+			# AttributeEnd
+		AttributeEnd
+		AttributeBegin
+			Surface "specular" "float transparency" [1]
+			Translate -40 -5 -160
+			Scale 10 10 10
+			Color [0.9 0.9 0.9]
+			Opacity [0.5 0.5 0.5]
+			Sphere 1 -1 1  360
+		AttributeEnd
+		AttributeBegin
+			Surface "specular"
+			Translate -30 -50 -180
+			Scale 20 50 20
+			Color [0 1 0]
+			Rotate 270 1 0 0
+			Cone 1 1 360
+		AttributeEnd
+		AttributeBegin
+			Surface "specular"
+			Translate -30 50 -180
+			Scale 20 -50 20
+			Color [0 1 0]
+			Rotate 270 1 0 0
+			Cone 1 1 360
+		AttributeEnd
+
+		AttributeBegin
+			# Surface "matte"
+			Translate 30 -50 -100
+			AttributeBegin
+				Rotate -5.73 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.2 0.8 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -10 0 -10
+				Rotate -11.46 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.8 0.2 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -20 0 -20
+				Rotate -17.19 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.8 0.8 0.2]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -30 0 -30
+				Rotate -22.93 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.2 0.8 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -40 0 -40
+				Rotate -28.66 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.8 0.2 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -30 0 -50
+				Rotate -22.93 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.8 0.8 0.2]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -20 0 -60
+				Rotate -17.19 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.2 0.8 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+
+			AttributeBegin
+				Translate -10 0 -70
+				Rotate -11.46 0 0 1
+				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
+				Scale 3 110 3
+				Color [0.8 0.2 0.8]
+				Rotate 90 1 0 0
+				Cylinder 1 -1 1 360
+			AttributeEnd
+		AttributeEnd
+	WorldEnd
+FrameEnd
