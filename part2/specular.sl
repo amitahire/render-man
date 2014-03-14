@@ -8,9 +8,9 @@ surface specular (
 		)
 	{
 
-		point Pk = P;//transform("current", "world", P);
-		normal Nk = N;//ntransform("current", "world", N);
-		vector If = I;//vtransform("current", "world", I);
+		point Pk = P;
+		normal Nk = N;
+		vector If = I;
 
 		float curDepth = 0;
 		rayinfo("depth", curDepth);

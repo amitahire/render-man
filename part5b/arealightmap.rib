@@ -1,4 +1,4 @@
-Format 640 480 1
+Format 1280 960 1
 Projection "perspective" "fov" 50
 ShadingRate 1
 PixelSamples 4 4
@@ -8,8 +8,6 @@ FrameBegin
 	Imager "background" "color color" [1 1 1]
 	Scale 1.33 1 -1
 	WorldBegin
-		# LightSource "shadowlight" 1 "intensity" 10000 "lightcolor" [1 1 1] "from" [0 50 -170]
-		# LightSource "shadowlight" 2 "intensity" 10000 "lightcolor" [1 1 1] "from" [-10 10 -140]
 
 		TransformBegin
 			Translate 0 45 -170
@@ -17,14 +15,6 @@ FrameBegin
 			LightSource "plausibleArealight" "mylighthandle" "intensity" 700
 					"color lightcolor" [1 1 1] "float maxSamples" 64
 					"float sides" 2
-			# AttributeBegin
-			# Attribute "visibility" "int specular" [0] "int diffuse" [0]
-			#                       "int transmission" [0]
-			# Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [1]
-			# Color 1 0 0
-			# Surface "constant"
-			# Patch "bilinear" "P" [-.5 -.5 0  -.5 .5 0  .5 -.5 0  .5 .5 0]
-			# AttributeEnd
 		TransformEnd
 
 		TransformBegin
@@ -34,14 +24,6 @@ FrameBegin
 			LightSource "plausibleArealight" "mylighthandle" "intensity" 1000
 					"color lightcolor" [1 1 1] "float maxSamples" 64
 					"float sides" 1
-			# AttributeBegin
-			# Attribute "visibility" "int specular" [0] "int diffuse" [0]
-			#                       "int transmission" [0]
-			# Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [1]
-			# Color 1  0 0
-			# Surface "constant"
-			# Patch "bilinear" "P" [-.5 -.5 0  -.5 .5 0  .5 -.5 0  .5 .5 0]
-			# AttributeEnd
 		TransformEnd
 
 		Attribute "visibility" "int diffuse" [1]
@@ -141,14 +123,6 @@ FrameBegin
 				Polygon "P" [0 0 0  1 0 0  0 1 0]
 				Polygon "P" [1 1 0  1 0 0  0 1 0]
 			AttributeEnd
-			# AttributeBegin
-			# 	Translate -50 -50 202
-			# 	Attribute "photon" "shadingmodel" "matte"
-			# 	Scale 200 200 200
-			# 	Color [5 5 5]
-			# 	Polygon "P" [0 0 0  1 0 0  0 1 0]
-			# 	Polygon "P" [1 1 0  1 0 0  0 1 0]
-			# AttributeEnd
 		AttributeEnd
 		AttributeBegin
 			Attribute "photon" "shadingmodel" "transparent"
@@ -180,7 +154,6 @@ FrameBegin
 			Translate 30 -50 -100
 			AttributeBegin
 				Rotate -5.73 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -190,7 +163,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -10
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0
@@ -200,7 +172,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -20
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.8 0.2]
 				Rotate 90 1 0 0
@@ -210,7 +181,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -30
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -220,7 +190,6 @@ FrameBegin
 			AttributeBegin
 				Translate -40 0 -40
 				Rotate -28.66 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0
@@ -230,7 +199,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -50
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.8 0.2]
 				Rotate 90 1 0 0
@@ -240,7 +208,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -60
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -250,7 +217,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -70
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0

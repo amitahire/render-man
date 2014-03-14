@@ -1,8 +1,6 @@
-Display "colorbleed.tiff" "framebuffer" "rgb"
-Format 640 480  1
+Display "colorbleed_ptc.tiff" "file" "rgb"
+Format 1280 960  1
 Projection "perspective" "fov" 50
-# ShadingRate 1
-# PixelSamples 4 4
 
 DisplayChannel "float _area"
 DisplayChannel "color _radiosity"
@@ -29,7 +27,6 @@ FrameBegin
 		AttributeBegin
 			Translate -50 -50 -200
 			AttributeBegin
-				# Surface "diffuse" "intensity" 10.0
 				Scale 100 100 100
 				Color [0.2 0.2 0.2]
 				Polygon "P" [0 0 0  1 0 0  0 1 0]
@@ -37,7 +34,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate 0 0 100
 				Rotate 90 0 1 0
 				Scale 100 101 100
@@ -47,7 +43,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate -1 0 100
 				Rotate 90 0 1 0
 				Scale 100 101 100
@@ -57,7 +52,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate 100 0 0
 				Rotate -90 0 1 0
 				Scale 100 101 100
@@ -67,7 +61,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate 101 0 0
 				Rotate -90 0 1 0
 				Scale 100 101 100
@@ -77,7 +70,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "specular"
 				Translate 0 100 0
 				Rotate 90 1 0 0
 				Scale 101 100 100
@@ -87,7 +79,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate 0 101 0
 				Rotate 90 1 0 0
 				Scale 101 100 100
@@ -97,7 +88,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "specular"
 				Translate 0 0 100
 				Rotate -90 1 0 0
 				Scale 101 100 100
@@ -107,7 +97,6 @@ FrameBegin
 			AttributeEnd
 
 			AttributeBegin
-				# Surface "diffuse"
 				Translate 0 -1 100
 				Rotate -90 1 0 0
 				Scale 101 100 100
@@ -115,25 +104,14 @@ FrameBegin
 				Polygon "P" [0 0 0  1 0 0  0 1 0]
 				Polygon "P" [1 1 0  0 1 0  1 0 0]
 			AttributeEnd
-			# AttributeBegin
-			# 	Translate -50 -50 202
-			# 	# Surface "diffuse"
-			# 	Scale 200 200 200
-			# 	Color [5 5 5]
-			# 	Polygon "P" [0 0 0  1 0 0  0 1 0]
-			# 	Polygon "P" [1 1 0  0 1 0  1 0 0]
-			# AttributeEnd
 		AttributeEnd
 		AttributeBegin
-			# Surface "specular" "float transparency" [1]
 			Translate -40 -5 -160
 			Scale 10 10 10
 			Color [0 0 0]
-			# Opacity [0.5 0.5 0.5]
 			Sphere 1 -1 1  360
 		AttributeEnd
 		AttributeBegin
-			# Surface "specular"
 			Translate -30 -50 -180
 			Scale 20 50 20
 			Color [0 0 0]
@@ -141,7 +119,6 @@ FrameBegin
 			Cone 1 1 360
 		AttributeEnd
 		AttributeBegin
-			# Surface "specular"
 			Translate -30 50 -180
 			Scale 20 -50 20
 			Color [0 0 0]
@@ -150,11 +127,9 @@ FrameBegin
 		AttributeEnd
 
 		AttributeBegin
-			# Surface "diffuse"
 			Translate 30 -50 -100
 			AttributeBegin
 				Rotate -5.73 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -164,7 +139,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -10
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0
@@ -174,7 +148,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -20
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.8 0.2]
 				Rotate 90 1 0 0
@@ -184,7 +157,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -30
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -194,7 +166,6 @@ FrameBegin
 			AttributeBegin
 				Translate -40 0 -40
 				Rotate -28.66 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0
@@ -204,7 +175,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -50
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.8 0.2]
 				Rotate 90 1 0 0
@@ -214,7 +184,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -60
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -224,7 +193,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -70
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.8 0.2 0.8]
 				Rotate 90 1 0 0

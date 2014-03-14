@@ -144,7 +144,6 @@ FrameBegin
 			Translate 30 -50 -100
 			AttributeBegin
 				Rotate -5.73 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -154,7 +153,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -10
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -164,7 +162,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -20
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -174,7 +171,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -30
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -184,7 +180,6 @@ FrameBegin
 			AttributeBegin
 				Translate -40 0 -40
 				Rotate -28.66 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -194,7 +189,6 @@ FrameBegin
 			AttributeBegin
 				Translate -30 0 -50
 				Rotate -22.93 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -204,7 +198,6 @@ FrameBegin
 			AttributeBegin
 				Translate -20 0 -60
 				Rotate -17.19 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
@@ -214,7 +207,6 @@ FrameBegin
 			AttributeBegin
 				Translate -10 0 -70
 				Rotate -11.46 0 0 1
-				# Transform [1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1]
 				Scale 3 110 3
 				Color [0.2 0.8 0.8]
 				Rotate 90 1 0 0
