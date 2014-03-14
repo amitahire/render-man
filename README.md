@@ -3,21 +3,21 @@ render-man
 
 Assignment 2 Graphics CS 775
 
-110050012 - Mayank Meghwanshi
+110050012 - Mayank Meghwanshi  
 110050041 - Shivam H Prasad
 
 
-Part1:
+Part1:  
 	raytrace.rib - Scene Description file similar to assignment 1 Raytraced Scene
 	raytrace.tiff - Final Image
 	shadowlight.sl - Point light with transmission() to check for shadow areas
 	specular.sl - Surface shader to implement specular surface similar to what we did in raytracer assignment 1
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman raytrace.rib
 
-Part2:
+Part2:  
 	colorbleed.rib - Scene Description with colorbleeding
 	colorbleed.tiff - Final image with colorbleeding
 	diffuse.sl - Surface shader to implement diffused surface with indirect diffuse color
@@ -26,13 +26,13 @@ Part2:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman colorbleed.rib # for colorbleed
 		prman nocolorbleed.rib # for nocolorbleed
 
 
-Part2b:
+Part2b:  
 	colorbleed.rib - Scene Description for point cloud generation
 	bake_radiosity.sl - Shader to make point cloud data
 	colorbleed_ptc.tiff - Image generated with point cloud
@@ -42,12 +42,12 @@ Part2b:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman colorbleed.rib
 		prman bake_colorbleed.rib
 
-Part3:
+Part3:  
 	causticmap.rib - Scene Description to generate photon map
 	caustic.rib - Scene description to use photon map to generate caustics
 	caustic.tiff - Final Image with caustic.
@@ -56,12 +56,12 @@ Part3:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman causticmap.rib
 		prman caustic.rib
 
-Part3b:
+Part3b:  
 	causticmap.rib - Photon map generator
 	caustic.rib - File to generate point clouds
 	bake_caustic.rib - Scene Description file to use baked radiosity point cloud data
@@ -72,22 +72,22 @@ Part3b:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman causticmap.rib
 		prman caustic.rib
 		prman bake_caustic.rib
 
-Part4:
+Part4:  
 	arealightmap.rib - Photon map generator for arealights with caustics
 	arealight.rib - Scene description with arealights
 	arealight.tiff - Final image with arealights and caustics
 
-	Instructions:
+	Instructions:  
 		prman arealightmap.rib
 		prman arealight.rib
 
-Part4b:
+Part4b:  
 	arealightmap.rib - Photon map generator for arealights with caustics
 	arealight.rib - Scene Description file for radiosity data of area lights as diffused objects
 	arealight_ptc.tiff - Image generated with arealight.rib point cloud
@@ -100,7 +100,7 @@ Part4b:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman arealightmap.rib
 		prman arealight.rib
@@ -108,17 +108,17 @@ Part4b:
 		ptmerge arealight.ptc areaobject.ptc merged.ptc
 		prman bake_arealight.rib
 
-part5:
+part5:  
 	arealight.rib - Scene description with textures in arealight.rib
 	arealightmap.rib
 	textures - directory for textures
 	texture.tiff - Final Image with textures
 
-	Instructions:
+	Instructions:  
 		prman arealightmap.rib
 		prman arealight.rib
 
-part5b:
+part5b:  
 	bake_arealight.rib - Scene description with textures in bake_arealight.rib
 	texture.tiff - Final image with textures
 	textures - directory for textures
@@ -130,7 +130,7 @@ part5b:
 	shadowlight.sl
 	specular.sl
 
-	Instructions:
+	Instructions:  
 		shader *sl
 		prman arealightmap.rib
 		prman arealight.rib
