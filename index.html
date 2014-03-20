@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Render-man by mayank127</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Render-man</h1>
+        <h2>Assignment 2 Graphics CS 775</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/mayank127/render-man/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/mayank127/render-man/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/mayank127/render-man" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="render-man" class="anchor" href="#render-man"><span class="octicon octicon-link"></span></a>Render-man</h1>
+
+<p>Assignment 2 Graphics CS 775</p>
+
+<p>110050012 - Mayank Meghwanshi<br>
+110050041 - Shivam H Prasad</p>
+
+<h2>
+<a name="part1" class="anchor" href="#part1"><span class="octicon octicon-link"></span></a>Part1:</h2>
+
+<ul>
+<li>raytrace.rib - Scene Description file similar to assignment 1 Raytraced Scene</li>
+<li>raytrace.tiff - Final Image</li>
+<li>shadowlight.sl - Point light with transmission() to check for shadow areas</li>
+<li>specular.sl - Surface shader to implement specular surface similar to what we did in raytracer assignment 1</li>
+</ul><h3>
+<a name="instructions" class="anchor" href="#instructions"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman raytrace.rib
+</code></pre>
+
+<h2>
+<a name="part2" class="anchor" href="#part2"><span class="octicon octicon-link"></span></a>Part2:</h2>
+
+<ul>
+<li>colorbleed.rib - Scene Description with colorbleeding</li>
+<li>colorbleed.tiff - Final image with colorbleeding</li>
+<li>diffuse.sl - Surface shader to implement diffused surface with indirect diffuse color</li>
+<li>nocolorbleed.rib - Scene Description without colorbleeding</li>
+<li>nocolorbleed.tiff - Final image without colorbleeding</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-1" class="anchor" href="#instructions-1"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman colorbleed.rib # for colorbleed
+prman nocolorbleed.rib # for nocolorbleed
+</code></pre>
+
+<h2>
+<a name="part2b" class="anchor" href="#part2b"><span class="octicon octicon-link"></span></a>Part2b:</h2>
+
+<ul>
+<li>colorbleed.rib - Scene Description for point cloud generation</li>
+<li>bake_radiosity.sl - Shader to make point cloud data</li>
+<li>colorbleed_ptc.tiff - Image generated with point cloud</li>
+<li>bake_colorbleed.rib - Scene Description file to use baked radiosity point cloud data</li>
+<li>colorbleed.tiff - Final Image with colorbleed</li>
+<li>pointbasedcolorbleeding.sl - Shader to use point cloud data on surface</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-2" class="anchor" href="#instructions-2"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman colorbleed.rib
+prman bake_colorbleed.rib
+</code></pre>
+
+<h2>
+<a name="part3" class="anchor" href="#part3"><span class="octicon octicon-link"></span></a>Part3:</h2>
+
+<ul>
+<li>causticmap.rib - Scene Description to generate photon map</li>
+<li>caustic.rib - Scene description to use photon map to generate caustics</li>
+<li>caustic.tiff - Final Image with caustic.</li>
+<li>no_caustic.tiff - Final image without caustic</li>
+<li>diffuse.sl</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-3" class="anchor" href="#instructions-3"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman causticmap.rib
+prman caustic.rib
+</code></pre>
+
+<h2>
+<a name="part3b" class="anchor" href="#part3b"><span class="octicon octicon-link"></span></a>Part3b:</h2>
+
+<ul>
+<li>causticmap.rib - Photon map generator</li>
+<li>caustic.rib - File to generate point clouds</li>
+<li>bake_caustic.rib - Scene Description file to use baked radiosity point cloud data</li>
+<li>bake_caustic.tiff - Final image with caustic</li>
+<li>caustic_ptc.tiff - Image generated with point cloud</li>
+<li>bake_radiosity.sl</li>
+<li>pointbasedcolorbleeding.sl</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-4" class="anchor" href="#instructions-4"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman causticmap.rib
+prman caustic.rib
+prman bake_caustic.rib
+</code></pre>
+
+<h2>
+<a name="part4" class="anchor" href="#part4"><span class="octicon octicon-link"></span></a>Part4:</h2>
+
+<ul>
+<li>arealightmap.rib - Photon map generator for arealights with caustics</li>
+<li>arealight.rib - Scene description with arealights</li>
+<li>arealight.tiff - Final image with arealights and caustics</li>
+</ul><h3>
+<a name="instructions-5" class="anchor" href="#instructions-5"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>prman arealightmap.rib
+prman arealight.rib
+</code></pre>
+
+<h2>
+<a name="part4b" class="anchor" href="#part4b"><span class="octicon octicon-link"></span></a>Part4b:</h2>
+
+<ul>
+<li>arealightmap.rib - Photon map generator for arealights with caustics</li>
+<li>arealight.rib - Scene Description file for radiosity data of area lights as diffused objects</li>
+<li>arealight_ptc.tiff - Image generated with arealight.rib point cloud</li>
+<li>areaobjects.rib - Scene Description file for radiosity data of other diffused objects</li>
+<li>areaobject_ptc.tiff - Image generated with areaobjects.rib point cloud</li>
+<li>bake_arealight.rib - Scene description file for using merged point cloud data and photon map</li>
+<li>arealight.tiff - Final Image generated with all the three effects</li>
+<li>bake_radiosity.sl</li>
+<li>pointbasedcolorbleeding.sl</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-6" class="anchor" href="#instructions-6"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman arealightmap.rib
+prman arealight.rib
+prman areaobjects.rib
+ptmerge arealight.ptc areaobject.ptc merged.ptc
+prman bake_arealight.rib
+</code></pre>
+
+<h2>
+<a name="part5" class="anchor" href="#part5"><span class="octicon octicon-link"></span></a>Part5:</h2>
+
+<ul>
+<li>arealight.rib - Scene description with textures in arealight.rib</li>
+<li>arealightmap.rib</li>
+<li>textures - directory for textures</li>
+<li>texture.tiff - Final Image with textures</li>
+</ul><h3>
+<a name="instructions-7" class="anchor" href="#instructions-7"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>prman arealightmap.rib
+prman arealight.rib
+</code></pre>
+
+<h2>
+<a name="part5b" class="anchor" href="#part5b"><span class="octicon octicon-link"></span></a>Part5b:</h2>
+
+<ul>
+<li>bake_arealight.rib - Scene description with textures in bake_arealight.rib</li>
+<li>texture.tiff - Final image with textures</li>
+<li>textures - directory for textures</li>
+<li>arealightmap.rib</li>
+<li>arealight.rib</li>
+<li>areaobjects.rib</li>
+<li>bake_radiosity.sl</li>
+<li>pointbasedcolorbleeding.sl</li>
+<li>shadowlight.sl</li>
+<li>specular.sl</li>
+</ul><h3>
+<a name="instructions-8" class="anchor" href="#instructions-8"><span class="octicon octicon-link"></span></a>Instructions:</h3>
+
+<pre><code>shader *sl
+prman arealightmap.rib
+prman arealight.rib
+prman areaobjects.rib
+ptmerge arealight.ptc areaobject.ptc merged.ptc
+prman bake_arealight.rib
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
